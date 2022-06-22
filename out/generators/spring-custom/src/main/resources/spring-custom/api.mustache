@@ -1,0 +1,25 @@
+package {{package}};
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+#Params de CodegenOperation
+{{#operations}}
+@Validated
+@RestController
+public class {{classname}}Controller {
+{{#operation}}
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pet", produces = {"application/xml", "application/json"}, consumes = {"application/json", "application/xml"})
+    public ResponseEntity<Pet> {{operationId}}(
+        {{#allParams}}
+            {{paramName}}: {{dataType}}
+        {{/allParams}}
+        ) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    }
+{{/operation}}
+{{/operations}}
+}

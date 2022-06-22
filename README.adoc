@@ -1,0 +1,6 @@
+= Demo Open API Generator
+
+* Comando para gerar o projeto customizado: `java -jar openapi-generator-cli.jar meta -o out/generators/spring-custom -n spring-custom -p br.com.cardoso.codegen`
+* Acessar a pasta `out/generators/spring-custom/` para gerar o jar customizado: `mvn clean package -DskipTests`
+* Comando para rodar o projeto customizado em cima do Open API Generator: `java -cp openapi-generator-cli.jar:out/generators/spring-custom/target/spring-custom-openapi-generator-1.0.0.jar org.openapitools.codegen.OpenAPIGenerator generate -g spring-custom -i open-api-example.yml -o ./demo-app`
+
